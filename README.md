@@ -1,64 +1,180 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# 🎵 Sistema de Gestión y Venta de Entradas para Conciertos
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## 📖 Descripción
 
-## About Laravel
+Este proyecto es una aplicación web desarrollada en Laravel que permite gestionar la venta de entradas para conciertos. El sistema facilita la selección de asientos, el registro de compradores, la generación de tickets en PDF y el envío automático de las entradas por correo electrónico.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🎯 Objetivo
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Automatizar el proceso de venta y administración de entradas para eventos musicales, permitiendo un control eficiente de los asientos disponibles y vendidos.
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## ⚙️ Funcionalidades
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 🎫 Reserva de Entradas
 
-## Laravel Sponsors
+Los usuarios pueden:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+- Visualizar los asientos disponibles.
+- Seleccionar uno o varios asientos.
+- Registrar sus datos personales.
+- Confirmar la compra.
 
-### Premium Partners
+Una vez finalizada la compra, los asientos quedan marcados como vendidos.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[CMS Max](https://www.cmsmax.com/)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
+---
 
-## Contributing
+### 👤 Registro de Compradores
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+El sistema almacena la información del comprador:
 
-## Code of Conduct
+- Nombre
+- Correo electrónico
+- Teléfono
+- Dirección
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Estos datos quedan asociados a las entradas adquiridas.
 
-## Security Vulnerabilities
+---
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 📄 Generación de Tickets
 
-## License
+Después de realizar la compra:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- Se genera automáticamente un ticket en formato PDF.
+- El comprador puede descargar el ticket.
+- El ticket contiene la información de la reserva realizada.
+
+---
+
+### 📧 Envío de Tickets por Correo
+
+El sistema envía automáticamente un correo electrónico al comprador con:
+
+- Confirmación de la compra.
+- Ticket en PDF adjunto.
+
+---
+
+### 🛒 Venta Masiva de Entradas
+
+Permite registrar múltiples asientos en una sola operación, facilitando la compra para grupos de personas.
+
+---
+
+### 🔐 Inicio de Sesión
+
+El sistema cuenta con autenticación para administradores mediante usuario y contraseña.
+
+---
+
+### 📊 Panel Administrativo
+
+Los administradores pueden:
+
+- Consultar las ventas realizadas.
+- Gestionar usuarios.
+- Visualizar compradores registrados.
+- Controlar los asientos vendidos y disponibles.
+- Administrar recaudos y cobros.
+
+---
+
+## 🏗️ Arquitectura del Proyecto
+
+El sistema fue desarrollado siguiendo el patrón de arquitectura **MVC (Modelo - Vista - Controlador)**.
+
+### Modelos
+
+Gestionan la información almacenada en la base de datos.
+
+Principales entidades:
+
+- Buyer
+- Seat
+- SeatSold
+- Collection
+- UserGmo
+
+### Vistas
+
+Proporcionan la interfaz gráfica para clientes y administradores.
+
+### Controladores
+
+Gestionan la lógica del negocio y la comunicación entre modelos y vistas.
+
+---
+
+## 🔄 Flujo de Funcionamiento
+
+```text
+Cliente ingresa al sistema
+        ↓
+Visualiza los asientos disponibles
+        ↓
+Selecciona los asientos deseados
+        ↓
+Ingresa sus datos personales
+        ↓
+Se registra la compra
+        ↓
+Los asientos cambian a estado vendido
+        ↓
+Se genera el ticket PDF
+        ↓
+Se envía el ticket por correo electrónico
+```
+
+## 🛠️ Tecnologías Utilizadas
+
+- PHP
+- Laravel
+- MySQL
+- HTML5
+- CSS3
+- JavaScript
+- DomPDF
+- SMTP para envío de correos
+
+---
+
+## 📂 Módulos del Sistema
+
+### Módulo de Clientes
+
+- Reserva de entradas.
+- Consulta de disponibilidad.
+- Descarga de tickets.
+
+### Módulo de Ventas
+
+- Venta individual.
+- Venta masiva.
+- Registro de compradores.
+
+### Módulo Administrativo
+
+- Gestión de usuarios.
+- Gestión de ventas.
+- Gestión de recaudos.
+- Supervisión general del sistema.
+
+---
+
+## ✅ Beneficios
+
+- Automatización del proceso de venta.
+- Reducción de errores manuales.
+- Generación automática de tickets.
+- Envío inmediato de confirmaciones por correo.
+- Administración centralizada de la información.
+
+---
+
+## 👨‍💻 Autor
+
+Proyecto desarrollado como práctica académica para la gestión y venta de entradas de conciertos utilizando Laravel.
