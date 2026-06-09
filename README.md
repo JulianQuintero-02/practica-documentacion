@@ -1,97 +1,97 @@
-# 🎵 Sistema de Gestión y Venta de Entradas para Conciertos
+# 🎵 Concert Ticket Management and Sales System
 
-## 📖 Descripción
+## 📖 Description
 
-Este proyecto es una aplicación web desarrollada en Laravel que permite gestionar la venta de entradas para conciertos. El sistema facilita la selección de asientos, el registro de compradores, la generación de tickets en PDF y el envío automático de las entradas por correo electrónico.
-
----
-
-## 🎯 Objetivo
-
-Automatizar el proceso de venta y administración de entradas para eventos musicales, permitiendo un control eficiente de los asientos disponibles y vendidos.
+This project is a web application developed with Laravel that allows the management and sale of concert tickets. The system enables seat selection, buyer registration, PDF ticket generation, and automatic ticket delivery via email.
 
 ---
 
-## ⚙️ Funcionalidades
+## 🎯 Objective
 
-### 🎫 Reserva de Entradas
-
-Los usuarios pueden:
-
-- Visualizar los asientos disponibles.
-- Seleccionar uno o varios asientos.
-- Registrar sus datos personales.
-- Confirmar la compra.
-
-Una vez finalizada la compra, los asientos quedan marcados como vendidos.
+To automate the ticket sales and management process for musical events, providing efficient control of available and sold seats.
 
 ---
 
-### 👤 Registro de Compradores
+## ⚙️ Features
 
-El sistema almacena la información del comprador:
+### 🎫 Ticket Reservation
 
-- Nombre
-- Correo electrónico
-- Teléfono
-- Dirección
+Users can:
 
-Estos datos quedan asociados a las entradas adquiridas.
+- View available seats.
+- Select one or multiple seats.
+- Enter their personal information.
+- Confirm the purchase.
 
----
-
-### 📄 Generación de Tickets
-
-Después de realizar la compra:
-
-- Se genera automáticamente un ticket en formato PDF.
-- El comprador puede descargar el ticket.
-- El ticket contiene la información de la reserva realizada.
+Once the purchase is completed, the selected seats are marked as sold.
 
 ---
 
-### 📧 Envío de Tickets por Correo
+### 👤 Buyer Registration
 
-El sistema envía automáticamente un correo electrónico al comprador con:
+The system stores buyer information, including:
 
-- Confirmación de la compra.
-- Ticket en PDF adjunto.
+- Full Name
+- Email Address
+- Phone Number
+- Address
 
----
-
-### 🛒 Venta Masiva de Entradas
-
-Permite registrar múltiples asientos en una sola operación, facilitando la compra para grupos de personas.
+This information is linked to the purchased tickets.
 
 ---
 
-### 🔐 Inicio de Sesión
+### 📄 Ticket Generation
 
-El sistema cuenta con autenticación para administradores mediante usuario y contraseña.
+After a successful purchase:
 
----
-
-### 📊 Panel Administrativo
-
-Los administradores pueden:
-
-- Consultar las ventas realizadas.
-- Gestionar usuarios.
-- Visualizar compradores registrados.
-- Controlar los asientos vendidos y disponibles.
-- Administrar recaudos y cobros.
+- A PDF ticket is automatically generated.
+- The ticket can be downloaded by the buyer.
+- The ticket contains all reservation details.
 
 ---
 
-## 🏗️ Arquitectura del Proyecto
+### 📧 Ticket Delivery by Email
 
-El sistema fue desarrollado siguiendo el patrón de arquitectura **MVC (Modelo - Vista - Controlador)**.
+The system automatically sends an email to the buyer containing:
 
-### Modelos
+- Purchase confirmation.
+- PDF ticket attached.
 
-Gestionan la información almacenada en la base de datos.
+---
 
-Principales entidades:
+### 🛒 Bulk Ticket Sales
+
+The application allows multiple seats to be sold in a single transaction, making group purchases faster and more efficient.
+
+---
+
+### 🔐 User Authentication
+
+The system includes an administrator login module with secure authentication.
+
+---
+
+### 📊 Administrative Dashboard
+
+Administrators can:
+
+- View completed sales.
+- Manage system users.
+- Review registered buyers.
+- Monitor seat availability and sales.
+- Manage collections and payments.
+
+---
+
+## 🏗️ Project Architecture
+
+The application follows the **MVC (Model-View-Controller)** architectural pattern.
+
+### Models
+
+Responsible for managing and interacting with database records.
+
+Main entities:
 
 - Buyer
 - Seat
@@ -99,37 +99,37 @@ Principales entidades:
 - Collection
 - UserGmo
 
-### Vistas
+### Views
 
-Proporcionan la interfaz gráfica para clientes y administradores.
+Provide the graphical interface for customers and administrators.
 
-### Controladores
+### Controllers
 
-Gestionan la lógica del negocio y la comunicación entre modelos y vistas.
+Handle business logic and communication between models and views.
 
 ---
 
-## 🔄 Flujo de Funcionamiento
+## 🔄 System Workflow
 
 ```text
-Cliente ingresa al sistema
+Customer accesses the system
         ↓
-Visualiza los asientos disponibles
+Views available seats
         ↓
-Selecciona los asientos deseados
+Selects desired seats
         ↓
-Ingresa sus datos personales
+Enters personal information
         ↓
-Se registra la compra
+Purchase is registered
         ↓
-Los asientos cambian a estado vendido
+Seats are marked as sold
         ↓
-Se genera el ticket PDF
+PDF ticket is generated
         ↓
-Se envía el ticket por correo electrónico
+Ticket is sent via email
 ```
 
-## 🛠️ Tecnologías Utilizadas
+## 🛠️ Technologies Used
 
 - PHP
 - Laravel
@@ -138,43 +138,43 @@ Se envía el ticket por correo electrónico
 - CSS3
 - JavaScript
 - DomPDF
-- SMTP para envío de correos
+- SMTP Email Service
 
 ---
 
-## 📂 Módulos del Sistema
+## 📂 System Modules
 
-### Módulo de Clientes
+### Customer Module
 
-- Reserva de entradas.
-- Consulta de disponibilidad.
-- Descarga de tickets.
+- Ticket reservation.
+- Seat availability consultation.
+- Ticket download.
 
-### Módulo de Ventas
+### Sales Module
 
-- Venta individual.
-- Venta masiva.
-- Registro de compradores.
+- Individual ticket sales.
+- Bulk ticket sales.
+- Buyer registration.
 
-### Módulo Administrativo
+### Administration Module
 
-- Gestión de usuarios.
-- Gestión de ventas.
-- Gestión de recaudos.
-- Supervisión general del sistema.
-
----
-
-## ✅ Beneficios
-
-- Automatización del proceso de venta.
-- Reducción de errores manuales.
-- Generación automática de tickets.
-- Envío inmediato de confirmaciones por correo.
-- Administración centralizada de la información.
+- User management.
+- Sales management.
+- Collection management.
+- General system supervision.
 
 ---
 
-## 👨‍💻 Autor
+## ✅ Benefits
 
-Proyecto desarrollado como práctica académica para la gestión y venta de entradas de conciertos utilizando Laravel.
+- Automated ticket sales process.
+- Reduced manual errors.
+- Automatic ticket generation.
+- Instant email confirmations.
+- Centralized information management.
+
+---
+
+## 👨‍💻 Author
+
+Academic project developed for concert ticket sales and management using Laravel.
